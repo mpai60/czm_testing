@@ -126,6 +126,7 @@
 
     [QuasiStatic]
       [all]
+        block = '1 2 3' 
         eigenstrain_names = 'thermal_strain irr_strain'
         add_variables = true
         generate_output = 'vonmises_stress'
@@ -237,6 +238,7 @@
   []
   [elasticity_tensor]
     type = ComputeElasticityTensorCP
+    block = '1 2 3' 
     C_ijkl = '1.095e12 3.65e10 1.095e12 2.8568e8 9.549e6 9.549e6 0.01 0.01 0.3 0.3 0.01 0.01' 
     fill_method = orthotropic
     read_prop_user_object = euler_angles
