@@ -79,8 +79,8 @@
 
     power_law_parameter = 2.2
     viscosity = 1.0e-3
-    GI_c = 1e3
-    GII_c =1e2
+    GI_c = 1e4
+    GII_c = 1e5
 
   []
 
@@ -290,60 +290,6 @@
 
 ###################################################################################
 [Materials]
-
-  [E11]
-    type = DerivativeParsedMaterial
-    property_name = 'E11'
-    coupled_variables = 'm_ea irr'
-    constant_names = 'ea_0'
-    constant_expressions = '1.095e12'
-    expression = '(1+(m_ea*irr))*ea_0'
-  []
-  [E22]
-    type = DerivativeParsedMaterial
-    property_name = 'E22'
-    coupled_variables = 'm_ec irr'
-    constant_names = 'ec_0'
-    constant_expressions = '3.65e10'
-    expression = '(1+(m_ec*irr))*ec_0'
-  []
-  [G12]
-    type = DerivativeParsedMaterial
-    property_name = 'G12'  
-    constant_names = 'm'
-    constant_expressions = '2.8568e8'
-    expression = 'm'
-  []
-  [G23]
-    type = DerivativeParsedMaterial
-    property_name = 'G23' 
-    constant_names = 'm'
-    constant_expressions = '9.549e6'
-    expression = 'm'
-  []
-  [G31]
-    type = DerivativeParsedMaterial
-    property_name = 'G31'
-    constant_names = 'm'
-    constant_expressions = '2.8568e8'
-    expression = 'm'
-  []
-  [nu12]
-    type = DerivativeParsedMaterial
-    property_name = 'nu12'
-    coupled_variables = 'm_vc m_ea m_ec irr'
-    constant_names = 'vc_0 ea_0 ec_0'
-    constant_expressions = '0.3 1.095e12 3.65e10'
-    expression = '((1+(m_ec*irr))*ec_0)*((1+(m_vc*irr))*vc_0)/((1+(m_ea*irr))*ea_0)'
-  []
-  [nu23]
-    type = DerivativeParsedMaterial
-    property_name = 'nu23'
-    coupled_variables = 'm_vc irr'
-    constant_names = 'vc_0'
-    constant_expressions = '0.3'
-    expression = '(1+(m_vc*irr))*vc_0'
-  []
   [therm_prefactor]
     type = DerivativeParsedMaterial
     coupled_variables = 'CTE_0 temp'
@@ -405,7 +351,7 @@
   petsc_options_value = 'lu'
 
   automatic_scaling = true
-  nl_abs_tol = 1.2e-17
+  #nl_abs_tol = 1.2e-17
   dt = 1
   end_time = 1
 []
