@@ -248,8 +248,8 @@
     type = BiLinearMixedModeTraction
     boundary = czm_boundary # '561 562 564' - This is one sideset from each interface, but using this doesn't seem to affect the results.
     penalty_stiffness = 1e13
-    GI_c = 1e4
-    GII_c =1e5
+    GI_c = 1e5
+    GII_c = 1e2
     normal_strength = 1e6
     shear_strength = 1e3
     displacements = 'disp_x disp_y'

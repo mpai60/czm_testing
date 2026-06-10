@@ -79,8 +79,8 @@
 
     power_law_parameter = 2.2
     viscosity = 1.0e-3
-    GI_c = 1e4
-    GII_c = 1e5
+    GI_c = 1e5
+    GII_c = 1e2
 
   []
 
